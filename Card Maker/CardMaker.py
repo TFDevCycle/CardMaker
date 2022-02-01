@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 import re
-# settings
+
 souce_path = "img/"
 source_card = "Card.png"
 source_image = souce_path + source_card 
@@ -44,12 +44,12 @@ border_size = 5
 
 output_dir = "output"
 text_alignment = "left"
-# portion of image width you want text width to be
+
 img_fraction = 1
-#
+
 line_height = 0
 line_width = 0
-# generating images
+
 image = Image.open(source_image).convert('RGBA')
 image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
 draw = ImageDraw.Draw(image_with_text)
