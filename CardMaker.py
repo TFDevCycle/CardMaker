@@ -2,41 +2,44 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 import re
 
+# Your Card Infos
+Title       = "Fire Dragon"
+Attribute   = "Void"
+Level       = 6
+Type        = "[Dragon / Effect]"
+Description = "The Ultimate Power"
+Attack      = "2400"
+Defense     = "2000"
+
 souce_path = "img/"
-source_card = "Card.png"
+source_card = "Card-effect.png"
 source_image = souce_path + source_card 
 
-level_image = "Level.png"
+level_image = "Level-Red.png"
 level_file = Image.open(souce_path + level_image)
 level_file.resize((8,8),Image.ANTIALIAS)
 
-# Size must be 225x225
-image_card = "Placeholder.png"
-
-card_image = Image.open(souce_path + image_card)
+# Size must be 320x320
+image_card = "firedragon.jpg"
 
 print("Source Image: " + source_card)
 print("Card Image: " + image_card + "\n")
 
-Title       = "Template"
-Level       = 12
-Type        = "[Type1 / Type2]"
-Description = "This is a Template, for this State"
-Attack      = 0
-Defense     = 0
-
 txt_color = "black"
 
-fontsize = 36
-fontsize1 = 16
-fontsize2 = 12
+fontsize = 48
+fontsize1 = 15
+fontsize2 = 15
+fontsize3 = 20
 
-fontfile1 = "fonts/Matrix-Bold.otf"
-fontfile2 = "fonts/Yu-Gi-Oh! Matrix Book.ttf"
+fontfile1 = "fonts/Yu-Gi-Oh! Matrix Regular Small Caps 2.ttf"
+fontfile2 = "fonts/Matrix-Bold.otf"
+fontfile3 = "fonts\Yu-Gi-Oh! ITC Stone Serif Small Caps Bold.ttf"
+fontfile4 = "fonts\Yu-Gi-Oh! Matrix Book.ttf"
 
 i = 0
-area_x = 255
-area_y = 67
+area_x = 380
+area_y = 76
 
 border = True
 border_color = "black" 
@@ -50,6 +53,8 @@ img_fraction = 1
 line_height = 0
 line_width = 0
 
+card_image = Image.open(souce_path + image_card)
+card = card_image.resize((320,320),Image.ANTIALIAS)
 image = Image.open(source_image).convert('RGBA')
 image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
 draw = ImageDraw.Draw(image_with_text)
@@ -82,34 +87,61 @@ else:
     line_width = font.getsize(Title)[0]
     line_height = font.getsize(Title)[1]
 
-title_x = 20
+title_x = 30
 title_y = 28 
 
-type_x = 25
-type_y = 340
+type_x = 35
+type_y = 463
 
-desc_x = 25
-desc_y = 360
+desc_x = 35
+desc_y = 483
+
+atk_x = 265
+atk_y = 559
+
+def_x = 350
+def_y = 559
+
 
 fontsize -= 1
 
 font = ImageFont.truetype(fontfile1, fontsize)
-font1 = ImageFont.truetype(fontfile1, fontsize1)
-font2 = ImageFont.truetype(fontfile2, fontsize2)
+font1 = ImageFont.truetype(fontfile3, fontsize1)
+font2 = ImageFont.truetype(fontfile1, fontsize2)
+font3 = ImageFont.truetype(fontfile1, fontsize3)
 
 print("Final font size: ",fontsize)
 
 draw.text((title_x, title_y), Title, font=font, fill=txt_color, align=text_alignment)
 draw.text((type_x, type_y), Type, font=font1, fill=txt_color, align=text_alignment)
 draw.text((desc_x, desc_y), Description, font=font2, fill=txt_color, align=text_alignment)
+draw.text((atk_x, atk_y), Attack, font=font3, fill=txt_color, align=text_alignment)
+draw.text((def_x, def_y), Defense, font=font3, fill=txt_color, align=text_alignment)
+
 
 for i in range(Level):
-    area_x = area_x - 16
+    area_x = area_x - 27
     area = area_x, area_y
     image_with_text.paste(level_file, area) 
 
-area = 24, 90 
-image_with_text.paste(card_image, area)
+if Attribute == "Void":
+    attribute_image = "Void.png"
+    attribute_path = Image.open(souce_path + attribute_image)
+    area_x = 355
+    area_y = 29
+    area = area_x, area_y
+    image_with_text.paste(attribute_path, area)
+elif Attribute == "Time":
+    attribute_image = "Time.png"
+    attribute_path = Image.open(souce_path + attribute_image)
+    area_x = 355
+    area_y = 29
+    area = area_x, area_y
+    image_with_text.paste(attribute_path, area)  
+
+area = 51, 113 
+
+image_with_text.paste(card, area)
 
 out = Image.alpha_composite(image, image_with_text)
 
