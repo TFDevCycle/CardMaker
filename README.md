@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [General Info](#general-info)
-2. [Programs](#technologies)
+2. [Programs](#programs)
 3. [Installation](#installation)
 
 ### General Info
