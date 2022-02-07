@@ -15,4 +15,4 @@ Version which are Supported:
 If you have a Bug or anything else to Report, Go to The issue Section
 and Report it to me
 
-Thanks!
+Thanks
