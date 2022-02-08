@@ -10,7 +10,8 @@
 Make your own Yu-Gi-Oh Card with this CardMaker.
 ### Cards
 ![Card](https://github.com/TFDevCycle/CardMaker/blob/b17bef73996d2d82d7f68361af04289b6802afdc/output/Galaxy_Guard_Mk3.png)
-
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.latex-project.org/)
+[![GitHub release](https://img.shields.io/github/release/philipempl/modern-latex-cv.svg)](https://GitHub.com/philipempl/modern-latex-cv/releases/)
 ## Programs
 ***
 A list of Programs used within the project:
