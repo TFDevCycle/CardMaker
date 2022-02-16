@@ -1,4 +1,11 @@
-souce_path = "img/"
+souce_path   = "img/"
+path_cards   = "cards/"
+path_type    = "type/"
+path_lvl     = "lvl/"
+path_cardimg = "cardimages/"
+path_rarity  = "rarity/"
+path_extras  = "extras/"
+
 i = 0
 area_x = 380
 area_y = 76
