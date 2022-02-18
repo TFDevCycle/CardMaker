@@ -7,20 +7,29 @@ import re
 @Author: DevCycle
 @Version: 0.3
 @new: Added Classes
+
+@important
+ •
 '''
 
 # Your Card Infos
-card        = "Spell"
-image_card  = "TheBookofDarkness.jpg"
+card        = "Trap"
+image_card  = "Placeholder.png"
 
-Title       = "The Dark Book"
-Attribute   = "Spell"
+auflage     = "1. Auflage"
+card_id     = "UU01-DE001"
+
+Title       = "Template - Trap"
+Attribute   = "Trap"
+
+title_color = "black"
+desc_color  = "black"
 
 Level       = 0
 lvlcolor    = "red"
 
-Type        = "[Spell]"
-Description = "A Book full of Darkness"
+Type        = "[Trap]"
+Description = "Descrption"
 
 Attack      = ""
 Defense     = ""
@@ -48,6 +57,22 @@ class DrawImage():
         print("Source Image: " + source_card)
     elif card == "Spell":
         source_card = "Card-spell.png"
+        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
+        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
+        draw = ImageDraw.Draw(image_with_text)
+        image_width = image.size[0]
+        image_height = image.size[1]
+        print("Source Image: " + source_card)
+    elif card == "XYZ":
+        source_card = "Card-xyz.png"
+        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
+        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
+        draw = ImageDraw.Draw(image_with_text)
+        image_width = image.size[0]
+        image_height = image.size[1]
+        print("Source Image: " + source_card)
+    elif card == "Synchro":
+        source_card = "Card-synchro.png"
         image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
         image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
         draw = ImageDraw.Draw(image_with_text)
@@ -90,16 +115,14 @@ class DrawImageCard():
     print("Card Image: " + image_card + "\n")
 
 class DrawText():
-    title_x = 0
-    title_y = 0
-    type_x = 0
-    type_y = 0
-    desc_x = 0
-    desc_y = 0
     title_x = 30
     title_y = 28 
     type_x = 35
     type_y = 463
+    auflage_x = 45
+    auflage_y = 440
+    card_id_x = 300
+    card_id_y = 440
     desc_x = 35
     desc_y = 483
     atk_x = 265
@@ -112,14 +135,17 @@ class DrawText():
     font1 = ImageFont.truetype(fontfile3, fontsize1)
     font2 = ImageFont.truetype(fontfile1, fontsize2)
     font3 = ImageFont.truetype(fontfile1, fontsize3)
+    font4 = ImageFont.truetype(fontfile1, fontsize4)
 
     print("Final font size: ",fontsize)
 
-    draw.text((title_x, title_y), Title, font=font, fill=txt_color, align=text_alignment)
-    draw.text((type_x, type_y), Type, font=font1, fill=txt_color, align=text_alignment)
-    draw.text((desc_x, desc_y), Description, font=font2, fill=txt_color, align=text_alignment)
-    draw.text((atk_x, atk_y), Attack, font=font3, fill=txt_color, align=text_alignment)
-    draw.text((def_x, def_y), Defense, font=font3, fill=txt_color, align=text_alignment)
+    draw.text((title_x, title_y), Title, font=font, fill=title_color, align=text_alignment)
+    draw.text((type_x, type_y), Type, font=font1, fill=desc_color, align=text_alignment)
+    draw.text((desc_x, desc_y), Description, font=font2, fill=desc_color, align=text_alignment)
+    draw.text((atk_x, atk_y), Attack, font=font3, fill=desc_color, align=text_alignment)
+    draw.text((def_x, def_y), Defense, font=font3, fill=desc_color, align=text_alignment)
+    draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color, align=text_alignment)
+    draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color, align=text_alignment)
 
 class DrawCardType():
     if Attribute == "Void":
