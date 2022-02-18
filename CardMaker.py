@@ -229,7 +229,7 @@ class DrawCardType():
         area = area_x, area_y
         image_with_text.paste(attribute_img, area)
 
-class cornersign():
+class CornerSign():
     corner_img = "Cornerdefault.png"
     attribute_path = Image.open(souce_path + path_extras + corner_img)
     attribute_img = attribute_path.resize((20,20),Image.ANTIALIAS)
