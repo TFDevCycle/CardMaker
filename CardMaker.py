@@ -1,4 +1,5 @@
 from _config import *
+from Creator import *
 from PIL import Image, ImageDraw, ImageFont
 import os
 import re
@@ -11,28 +12,6 @@ import re
 @important
  •
 '''
-
-# Your Card Infos
-card        = "Trap"
-image_card  = "Placeholder.png"
-
-auflage     = "1. Auflage"
-card_id     = "UU01-DE001"
-
-Title       = "Template - Trap"
-Attribute   = "Trap"
-
-title_color = "black"
-desc_color  = "black"
-
-Level       = 0
-lvlcolor    = "red"
-
-Type        = "[Trap]"
-Description = "Descrption"
-
-Attack      = ""
-Defense     = ""
 
 class DrawImage():
     global image_with_text
