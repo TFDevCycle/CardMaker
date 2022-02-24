@@ -1,26 +1,26 @@
 import scripts.CardMaker
-
 #All Important Information are Set here for the CardMaker
-card        = "Synchro"
-image_card  = "MasterDragon.png"
+card        = "Effect"
+image_card  = "HellBeast.jpg"
 
 auflage     = "1. Auflage"
-card_id     = "UU01-DE001"
+card_id     = "UU01-DE007"
 
-Title       = "Dragon of Hell"
-Attribute   = "Light"
+Title       = "Hell Golem"
+Attribute   = "Fire"
 
 title_color = "black"
 desc_color  = "black"
 
-Level       = 12
-lvlcolor    = "blue"
+Level       = 5
+lvlcolor    = "red"
 
-Type        = "[Hell/Dragon]"
-Description = "The Ultimate Synchro Monster. Gains 500 ATK/DEF for every Monster on\nboth Graveyards"
+Type        = "[Hell/Effect]"
+Description = "A very Agressiv Beast"
 
-Attack      = "4000"
-Defense     = "4000"
+Attack      = "2600"
+Defense     = "1400"
+
 
 
 
