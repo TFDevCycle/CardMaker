@@ -1,4 +1,4 @@
-import CardMaker
+import scripts.CardMaker
 
 #All Important Information are Set here for the CardMaker
 card        = "Synchro"
