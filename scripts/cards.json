@@ -1,0 +1,32 @@
+{
+    "Monster": {
+        "Hell Beast": {
+            "Title": "Hell Beast",
+            "auflage": "1. Auflage",
+            "card_id": "UU01-DE007",
+            "image_card": "HellBeast.jpg",
+            "CardType": "Effect",
+            "Attribute": "Fire",
+            "lvl": "5",
+            "lvlcolor": "red",
+            "Type": "[Hell/Effect]",
+            "Desciption": "A very Agressiv Beast",
+            "ATK": "2600",
+            "DEF": "1400"
+        },
+        "Hell Golem": {
+            "Title": "Hell Golem",
+            "auflage": "1. Auflage",
+            "card_id": "UU01-DE006",
+            "image_card": "HellGolem.jpg",
+            "CardType": "Effect",
+            "Attribute": "Fire",
+            "lvl": "4",
+            "lvlcolor": "red",
+            "Type": "[Hell/Effect]",
+            "Desciption": "He is common in the Hell Mostly Near a Fortress",
+            "ATK": "2100",
+            "DEF": "800"
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import scripts.CardMaker
+
 #All Important Information are Set here for the CardMaker
 card        = "Effect"
 image_card  = "HellGolem.jpg"
