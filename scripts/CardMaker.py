@@ -58,6 +58,30 @@ class DrawImage():
         image_width = image.size[0]
         image_height = image.size[1]
         print("Source Image: " + source_card)
+    elif card == "Token":
+        source_card = "Card-token.png"
+        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
+        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
+        draw = ImageDraw.Draw(image_with_text)
+        image_width = image.size[0]
+        image_height = image.size[1]
+        print("Source Image: " + source_card)
+    elif card == "Ritual":
+        source_card = "Card-ritual.png"
+        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
+        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
+        draw = ImageDraw.Draw(image_with_text)
+        image_width = image.size[0]
+        image_height = image.size[1]
+        print("Source Image: " + source_card)
+    elif card == "Pendel":
+        source_card = "Card-effect-pendulum.png"
+        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
+        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
+        draw = ImageDraw.Draw(image_with_text)
+        image_width = image.size[0]
+        image_height = image.size[1]
+        print("Source Image: " + source_card)
 
 class DrawLevelImage():
     if lvlcolor == "red":

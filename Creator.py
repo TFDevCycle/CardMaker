@@ -1,26 +1,26 @@
 import scripts.CardMaker
 
 #All Important Information are Set here for the CardMaker
-card        = "Effect"
-image_card  = "HellGolem.jpg"
+card        = "Token"
+image_card  = "Mana.jpg"
 
 auflage     = "1. Auflage"
-card_id     = "UU01-DE006"
+card_id     = ""
 
-Title       = "Hell Golem"
-Attribute   = "Fire"
+Title       = "Spielmarke"
+Attribute   = ""
 
 title_color = "black"
 desc_color  = "black"
 
-Level       = 4
+Level       = 1
 lvlcolor    = "red"
 
-Type        = "[Hell/Effect]"
-Description = "He is common in the Hell, mostly near a Fortress"
+Type        = "[Token]"
+Description = "Nicht spielbar, nur als Token verwendbar"
 
-Attack      = "2100"
-Defense     = "800"
+Attack      = "0"
+Defense     = "0"
 
 
 
