@@ -3,6 +3,9 @@ from Creator import *
 from PIL import Image, ImageDraw, ImageFont
 import os
 import re
+import random
+
+serial_id = random.randint(000000000, 999999999)
 
 '''
 @Author: DevCycle
@@ -132,6 +135,8 @@ class DrawText():
     atk_y = 559
     def_x = 350
     def_y = 559
+    serial_x = 20
+    serial_y = 583
     fontsize -= 1
 
     font = ImageFont.truetype(fontfile1, fontsize)
@@ -149,7 +154,7 @@ class DrawText():
     draw.text((def_x, def_y), Defense, font=font3, fill=desc_color, align=text_alignment)
     draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color, align=text_alignment)
     draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color, align=text_alignment)
-
+    draw.text((serial_x, serial_y), str(serial_id), font=font4, fill=title_color, align=text_alignment)
 class DrawCardType():
     if Attribute == "Void":
         attribute_image = "Void.png"

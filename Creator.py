@@ -2,12 +2,12 @@ import scripts.CardMaker
 
 #All Important Information are Set here for the CardMaker
 card        = "Token"
-image_card  = "Mana.jpg"
+image_card  = "SkeletonT1.png"
 
 auflage     = "1. Auflage"
 card_id     = ""
 
-Title       = "Spielmarke"
+Title       = "Test"
 Attribute   = ""
 
 title_color = "black"
