@@ -85,6 +85,22 @@ class DrawImage():
         image_width = image.size[0]
         image_height = image.size[1]
         print("Source Image: " + source_card)
+    elif card == "Fusion":
+        source_card = "Card-fusion.png"
+        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
+        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
+        draw = ImageDraw.Draw(image_with_text)
+        image_width = image.size[0]
+        image_height = image.size[1]
+        print("Source Image: " + source_card)
+    elif card == "Link":
+        source_card = "Card-link.png"
+        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
+        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
+        draw = ImageDraw.Draw(image_with_text)
+        image_width = image.size[0]
+        image_height = image.size[1]
+        print("Source Image: " + source_card)
 
 class DrawLevelImage():
     if lvlcolor == "red":
@@ -119,7 +135,13 @@ class DrawImageCard():
     card = card_image.resize((320,320),Image.ANTIALIAS)
     image_with_text.paste(card, area)
     print("Card Image: " + image_card + "\n")
-
+    if linkschema == "0 1 0   0   0   0 0 0":
+            area_lx = 210
+            area_ly = 103
+            area = area_lx, area_ly
+            linkTM_image = "LM-Top.png"
+            link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
+            image_with_text.paste(link_file, area)  
 class DrawText():
     title_x = 30
     title_y = 28 

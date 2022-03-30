@@ -5,6 +5,8 @@ path_lvl     = "lvl/"
 path_cardimg = "cardimages/"
 path_rarity  = "rarity/"
 path_extras  = "extras/"
+path_linkarrow  = "linkarrow/"
+path_symbol  = "symbols/"
 
 i = 0
 area_x = 380
