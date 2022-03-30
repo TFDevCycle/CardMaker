@@ -16,7 +16,7 @@ desc_color  = "black"
 Level       = 0
 lvlcolor    = "red"
             #  Top  |  Mid  |  Dow
-linkschema = "0 1 0   0   0   0 0 0"
+linkschema = "0 0 0   0   0   0 1 0"
 
 Type        = "[Token]"
 Description = "Nicht spielbar, nur als Token verwendbar"

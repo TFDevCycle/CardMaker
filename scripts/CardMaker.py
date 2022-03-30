@@ -136,12 +136,38 @@ class DrawImageCard():
     image_with_text.paste(card, area)
     print("Card Image: " + image_card + "\n")
     if linkschema == "0 1 0   0   0   0 0 0":
-            area_lx = 210
-            area_ly = 103
+            area_lx = 164
+            area_ly = 90
+            Image.ROTATE_90
             area = area_lx, area_ly
             linkTM_image = "LM-Top.png"
             link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
             image_with_text.paste(link_file, area)  
+    elif linkschema == "0  0   1   0   0 0 0":
+            area_lx = 163
+            area_ly = 90
+            Image.ROTATE_90
+            area = area_lx, area_ly
+            linkTM_image = "LM-Right.png"
+            link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
+            image_with_text.paste(link_file, area) 
+    elif linkschema == "0  0   0   1   0 0 0":
+            area_lx = 163
+            area_ly = 90
+            Image.ROTATE_90
+            area = area_lx, area_ly
+            linkTM_image = "LM-Left.png"
+            link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
+            image_with_text.paste(link_file, area)             
+    elif linkschema == "0 0 0   0   0   0 1 0":
+            area_lx = 164
+            area_ly = 433
+            Image.ROTATE_90
+            area = area_lx, area_ly
+            linkTM_image = "LM-Bottom.png"
+            link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
+            image_with_text.paste(link_file, area) 
+
 class DrawText():
     title_x = 30
     title_y = 28 
