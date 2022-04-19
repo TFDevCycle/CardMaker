@@ -2,7 +2,7 @@
     "Monster": {
         "Hell Beast": {
             "Title": "Hell Beast",
-            "auflage": "1. Auflage",
+            "auflage": "",
             "card_id": "UU01-DE007",
             "image_card": "HellBeast.jpg",
             "CardType": "Effect",

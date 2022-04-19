@@ -1,7 +1,7 @@
 from ursina import *
 
 app = Ursina()
-tetu = "output/The_Dark_Book.png"
+tetu = "../output/Test_Link.png"
 
 
 rotation_resetter = Entity()
@@ -12,7 +12,7 @@ class tetu1:
 
     def tetu2():
         print("Success")
-        cube = Entity(parent=rotation_resetter, model='cube', scale=(0,6,4), texture="output/Fire_Dragon.png")
+        cube = Entity(parent=rotation_resetter, model='cube', scale=(0,6,4), texture="../output/Test_Link.png")
         cube.enable
 
 button  = Button(text="<", scale=(0.2,0.1), position=(-0.75,0))

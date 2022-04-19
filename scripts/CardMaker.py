@@ -20,113 +20,50 @@ class DrawImage():
     global image_with_text
     global image
     global draw
+    global attribute_image
 
     if card == "Effect":
         source_card = "Card-effect.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
     elif card == "Trap":
         source_card = "Card-trap.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
     elif card == "Spell":
         source_card = "Card-spell.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
     elif card == "XYZ":
         source_card = "Card-xyz.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
     elif card == "Synchro":
         source_card = "Card-synchro.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
     elif card == "Token":
         source_card = "Card-token.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
     elif card == "Ritual":
         source_card = "Card-ritual.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
     elif card == "Pendel":
         source_card = "Card-effect-pendulum.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
     elif card == "Fusion":
         source_card = "Card-fusion.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
     elif card == "Link":
         source_card = "Card-link.png"
-        image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
-        image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
-        draw = ImageDraw.Draw(image_with_text)
-        image_width = image.size[0]
-        image_height = image.size[1]
-        print("Source Image: " + source_card)
+
+    image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
+    image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
+    draw = ImageDraw.Draw(image_with_text)
+    image_width = image.size[0]
+    image_height = image.size[1]
+    print("Source Image: " + source_card)
 
 class DrawLevelImage():
     if lvlcolor == "red":
         level_image = "Level-Red.png"
-        level_file = Image.open(souce_path + path_lvl + level_image)
-        lvl_img = level_file.resize((25,25),Image.ANTIALIAS)
-        for i in range(Level):
-            area_x = area_x - 27
-            area = area_x, area_y
-            image_with_text.paste(lvl_img, area)
     elif lvlcolor == "blue":
         level_image = "Level-Blue.png"
-        level_file = Image.open(souce_path + path_lvl + level_image)
-        lvl_img = level_file.resize((25,25),Image.ANTIALIAS)
-        for i in range(Level):
-            area_x = area_x - 27
-            area = area_x, area_y
-            image_with_text.paste(lvl_img, area)  
     elif lvlcolor == "green":
         level_image = "Level-Green.png"
-        level_file = Image.open(souce_path + path_lvl + level_image)
-        lvl_img = level_file.resize((25,25),Image.ANTIALIAS)
-        for i in range(Level):
-            area_x = area_x - 27
-            area = area_x, area_y
-            image_with_text.paste(lvl_img, area)  
+
+    level_file = Image.open(souce_path + path_lvl + level_image)
+    lvl_img = level_file.resize((25,25),Image.ANTIALIAS)
+    for i in range(Level):
+        area_x = area_x - 27
+        area = area_x, area_y
+        image_with_text.paste(lvl_img, area)
 
 class DrawImageCard():
     area = 51, 113 
@@ -134,39 +71,32 @@ class DrawImageCard():
     card_image = Image.open(souce_path + path_cardimg + image_card)
     card = card_image.resize((320,320),Image.ANTIALIAS)
     image_with_text.paste(card, area)
+
     print("Card Image: " + image_card + "\n")
     if linkschema == "0 1 0   0   0   0 0 0":
-            area_lx = 164
-            area_ly = 90
-            Image.ROTATE_90
-            area = area_lx, area_ly
-            linkTM_image = "LM-Top.png"
-            link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
-            image_with_text.paste(link_file, area)  
+        area_lx = 164
+        area_ly = 90
+        linkTM_image = "LM-Top.png"
     elif linkschema == "0  0   1   0   0 0 0":
-            area_lx = 163
-            area_ly = 90
-            Image.ROTATE_90
-            area = area_lx, area_ly
-            linkTM_image = "LM-Right.png"
-            link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
-            image_with_text.paste(link_file, area) 
+        area_lx = 163
+        area_ly = 90
+        linkTM_image = "LM-Right.png"
     elif linkschema == "0  0   0   1   0 0 0":
-            area_lx = 163
-            area_ly = 90
-            Image.ROTATE_90
-            area = area_lx, area_ly
-            linkTM_image = "LM-Left.png"
-            link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
-            image_with_text.paste(link_file, area)             
+        area_lx = 163
+        area_ly = 90
+        linkTM_image = "LM-Left.png"         
     elif linkschema == "0 0 0   0   0   0 1 0":
-            area_lx = 164
-            area_ly = 433
-            Image.ROTATE_90
-            area = area_lx, area_ly
-            linkTM_image = "LM-Bottom.png"
-            link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
-            image_with_text.paste(link_file, area) 
+        area_lx = 164
+        area_ly = 430
+        linkTM_image = "LM-Bottom.png"
+    elif linkschema == "0 0 0   0   0   0 0 0":
+        area_lx = 0
+        area_ly = 0
+        linkTM_image = "Empty.png"
+
+    area = area_lx, area_ly
+    link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
+    image_with_text.paste(link_file, area)  
 
 class DrawText():
     title_x = 30
@@ -203,87 +133,37 @@ class DrawText():
     draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color, align=text_alignment)
     draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color, align=text_alignment)
     draw.text((serial_x, serial_y), str(serial_id), font=font4, fill=title_color, align=text_alignment)
+
 class DrawCardType():
     if Attribute == "Void":
         attribute_image = "Void.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area)
     elif Attribute == "Time":
         attribute_image = "Time.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area)
     elif Attribute == "Trap":
         attribute_image = "Trap.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area)
     elif Attribute == "Spell":
         attribute_image = "Spell.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area) 
     elif Attribute == "Wind":
         attribute_image = "Wind.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area) 
     elif Attribute == "Light":
-        attribute_image = "Light.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area)    
+        attribute_image = "Light.png" 
     elif Attribute == "Fire":
         attribute_image = "Fire.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area) 
     elif Attribute == "Earth":
         attribute_image = "Earth.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area) 
     elif Attribute == "Divine":
         attribute_image = "Divine.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area)
     elif Attribute == "Dark":
         attribute_image = "Dark.png"
-        attribute_path = Image.open(souce_path + path_type + attribute_image)
-        attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-        area_x = 355
-        area_y = 29
-        area = area_x, area_y
-        image_with_text.paste(attribute_img, area)
+    elif Attribute == "":
+        attribute_image = "Empty.png"    
+
+    attribute_path = Image.open(souce_path + path_type + attribute_image).convert('RGBA')
+    attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
+    area_x = 355
+    area_y = 29
+    area = area_x, area_y
+    image_with_text.paste(attribute_img, area)
 
 class CornerSign():
     corner_img = "Cornerdefault.png"

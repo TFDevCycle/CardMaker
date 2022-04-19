@@ -1,7 +1,7 @@
 import scripts.CardMaker
 
 #All Important Information are Set here for the CardMaker
-card        = "Link"
+card        = "Token"
 image_card  = "SkeletonT1.png"
 
 auflage     = "1. Auflage"
@@ -13,10 +13,10 @@ Attribute   = ""
 title_color = "black"
 desc_color  = "black"
 
-Level       = 0
+Level       = 12
 lvlcolor    = "red"
             #  Top  |  Mid  |  Dow
-linkschema = "0 0 0   0   0   0 1 0"
+linkschema = "0 0 0   0   0   0 0 0"
 
 Type        = "[Token]"
 Description = "Nicht spielbar, nur als Token verwendbar"
