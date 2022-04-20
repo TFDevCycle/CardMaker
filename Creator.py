@@ -10,22 +10,22 @@ rarity      = "Secret Rare"
 auflage     = "1. Auflage"
 card_id     = ""
 
-Title       = "Test Link"
-Attribute   = ""
+Title       = "The Yuga Skeleton"
+Attribute   = "Dark"
 
 Level       = 0
 lvlcolor    = "red"
 
 linkField = [
             [0, 1, 0],
-            [0, 0, 0],
+            [1, 0, 1],
             [0, 0, 0]
             ]
 
-Type        = "[Token]"
-Description = "Nicht spielbar, nur als Token verwendbar"
+Type        = "[Link/Undeath]"
+Description = "A Legendary Skeleton from the Mines of Yuga Island!"
 
-Attack      = "2500"
+Attack      = "3000"
 Defense     = "0"
 
 

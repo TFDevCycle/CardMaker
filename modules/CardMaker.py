@@ -84,6 +84,8 @@ class DrawCardRarity():
     tmpout.save("tmpout.png")
     if rarity == "Secret Rare":
         area = 51, 113 
+        draw.text((title_x, title_y), Title, font=font, fill="gold", align=text_alignment)
+        draw.text((title_x, title_y), Title, font=font, fill="silver", align=text_alignment)
         card_image = Image.open(souce_path + path_rarity + "Secret-Rare.png")
         card = card_image.resize((320,320),Image.ANTIALIAS)
         image_with_text.paste(card, area)
@@ -228,6 +230,7 @@ class DrawText():
 
     elif card == "Link":
         Defense = str(linkLevel)
+        draw.text((atk_x, atk_y), Attack, font=font3, fill=desc_color, align=text_alignment)
         draw.text((375, def_y), Defense, font=font3, fill=desc_color, align=text_alignment)
         draw.text((auflage_x, auflage_y), "", font=font4, fill=title_color, align=text_alignment)
     else:
