@@ -1,3 +1,4 @@
+from ast import Return
 from _config import *
 from Creator import *
 from PIL import Image, ImageDraw
@@ -22,6 +23,8 @@ class DrawImage():
     global draw
     global attribute_image
     global source_card
+    global image_height
+    global image_width
 
     if card == "Effect":
         source_card = "Card-effect.png"
@@ -75,11 +78,24 @@ class DrawImageCard():
 
     print("Card Image: " + image_card + "\n")
 
+class DrawCardRarity():
+    global tmpout
+    tmpout = Image.alpha_composite(image, image_with_text)
+    tmpout.save("tmpout.png")
+    if rarity == "Secret Rare":
+        area = 51, 113 
+        card_image = Image.open(souce_path + path_rarity + "Secret-Rare.png")
+        card = card_image.resize((320,320),Image.ANTIALIAS)
+        image_with_text.paste(card, area)
+        print("Card Rarity: Secret Rare")
+    else:
+        print("Card Rarity: None")
 class DrawLinkArrow():
     global linkLevel
     linkLevel = 0
-    out = Image.alpha_composite(image, image_with_text)
-    out.save("1.png")
+
+    tmpout = Image.alpha_composite(tmpout, image_with_text)
+    tmpout.save("tmpout.png")
     if card == "Link":
 
         if linkField[0][0] == 1:
@@ -220,7 +236,6 @@ class DrawText():
         draw.text((def_x, def_y), Defense, font=font3, fill=desc_color, align=text_alignment)
         draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color, align=text_alignment)
 
-
 class DrawSpellTrapText():
     stText_x = 275
     stText_y = 77
@@ -262,8 +277,6 @@ class DrawSpellTrapText():
             stText_y = 77
             draw.text((stText_x, stText_y), "[Trap]", font=font1, fill=title_color, align=text_alignment)
 
-    
-
 class DrawCardType():
     if Attribute == "Void":
         attribute_image = "Void.png"
@@ -304,8 +317,8 @@ class DrawCornerSign():
     area = area_x, area_y
     image_with_text.paste(attribute_img, area)
 
-image = Image.open("1.png").convert('RGBA')
-os.remove("1.png")
+image = Image.open("tmpout.png").convert('RGBA')
+os.remove("tmpout.png")
 
 out = Image.alpha_composite(image, image_with_text)
 out.show()  
