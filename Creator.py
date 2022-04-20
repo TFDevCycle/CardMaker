@@ -1,8 +1,10 @@
-import scripts.CardMaker
+import modules.CardMaker
 
 #All Important Information are Set here for the CardMaker
 card        = "Token"
 image_card  = "SkeletonT1.png"
+cardkind    = "Continuous"
+
 
 auflage     = "1. Auflage"
 card_id     = ""
@@ -10,18 +12,19 @@ card_id     = ""
 Title       = "Test Link"
 Attribute   = ""
 
-title_color = "black"
-desc_color  = "black"
-
-Level       = 12
+Level       = 0
 lvlcolor    = "red"
-            #  Top  |  Mid  |  Dow
-linkschema = "0 0 0   0   0   0 0 0"
+
+linkField = [
+            [1, 1, 1],
+            [1, 0, 1],
+            [1, 0, 1]
+            ]
 
 Type        = "[Token]"
 Description = "Nicht spielbar, nur als Token verwendbar"
 
-Attack      = "0"
+Attack      = "2500"
 Defense     = "0"
 
 
