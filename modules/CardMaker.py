@@ -1,4 +1,3 @@
-from ast import Return
 from _config import *
 from Creator import *
 from PIL import Image, ImageDraw
@@ -23,6 +22,7 @@ class DrawImage():
     global draw
     global attribute_image
     global source_card
+    global source_card1
     global image_height
     global image_width
 
@@ -46,6 +46,10 @@ class DrawImage():
         source_card = "Card-fusion.png"
     elif card == "Link":
         source_card = "Card-link.png"
+    elif card == "Trap Anime":
+       source_card = "Card-trap-anime.png"
+    elif card == "Spell Anime":
+       source_card = "Card-spell-anime.png"
 
     image = Image.open(souce_path + path_cards + source_card).convert('RGBA')
     image_with_text = Image.new('RGBA', image.size, (255,255,255,0))
@@ -70,13 +74,33 @@ class DrawLevelImage():
         image_with_text.paste(lvl_img, area)
 
 class DrawImageCard():
-    area = 51, 113 
+    global image_with_text1
+    global image1
+    global outanime
+    global areaanime
+    global card1
 
     card_image = Image.open(souce_path + path_cardimg + image_card)
-    card = card_image.resize((320,320),Image.ANTIALIAS)
-    image_with_text.paste(card, area)
 
-    print("Card Image: " + image_card + "\n")
+    if card == "Spell Anime":
+        areaanime = 9, 10 
+        card1 = card_image.resize((382,408),Image.ANTIALIAS)
+    elif card == "Trap Anime":
+        areaanime = 9, 10 
+        card1 = card_image.resize((382,408),Image.ANTIALIAS)
+    else:
+        area = 51, 113 
+        card = card_image.resize((320,320),Image.ANTIALIAS)
+
+    if card == "Spell Anime":
+        image_with_text.paste(card1, areaanime)
+        outanime = Image.alpha_composite(image, image_with_text)
+    elif card == "Trap Anime":
+        image_with_text.paste(card1, areaanime)
+        outanime = Image.alpha_composite(image, image_with_text)
+    else:
+        image_with_text.paste(card, area)
+        print("Card Image: " + image_card + "\n")
 
 class DrawCardRarity():
     global tmpout
@@ -92,6 +116,7 @@ class DrawCardRarity():
         print("Card Rarity: Secret Rare")
     else:
         print("Card Rarity: None")
+
 class DrawLinkArrow():
     global linkLevel
     linkLevel = 0
@@ -323,9 +348,29 @@ class DrawCornerSign():
 image = Image.open("tmpout.png").convert('RGBA')
 os.remove("tmpout.png")
 
-out = Image.alpha_composite(image, image_with_text)
-out.show()  
+if card == "Spell Anime":   
+    outanime.show()  
 
-file_name = re.sub(r"[^a-zA-Z0-9 | ]*","", Title).replace(" ", "_")+'.png'
-out.save(os.path.join(output_dir, file_name))
+    file_name = re.sub(r"[^a-zA-Z0-9 | ]*","", Title).replace(" ", "_")+'.png'
+    outanime.save(os.path.join(output_dir, file_name))
+elif card == "Trap Anime":
+    image_with_text.paste(card1, areaanime)
+    outanime.show()  
 
+    file_name = re.sub(r"[^a-zA-Z0-9 | ]*","", Title).replace(" ", "_")+'.png'
+    outanime.save(os.path.join(output_dir, file_name))
+else:
+    out = Image.alpha_composite(image, image_with_text)
+    out.show()  
+
+    file_name = re.sub(r"[^a-zA-Z0-9 | ]*","", Title).replace(" ", "_")+'.png'
+    out.save(os.path.join(output_dir, file_name))
+l = 0
+N = 0
+with open("modules/_config.py", "a+") as file:
+    for lines in file:
+        print(lines)
+    file.writelines('\n"../' + output_dir + file_name + '",')
+
+
+print(l)

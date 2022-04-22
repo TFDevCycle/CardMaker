@@ -1,8 +1,8 @@
 import modules.CardMaker
 
 #All Important Information are Set here for the CardMaker
-card        = "Link"
-image_card  = "SkeletonT1.png"
+card        = "Spell"
+image_card  = "BlackHole.png"
 cardkind    = "Continuous"
 
 rarity      = "Secret Rare"
@@ -10,7 +10,7 @@ rarity      = "Secret Rare"
 auflage     = "1. Auflage"
 card_id     = ""
 
-Title       = "The Yuga Skeleton"
+Title       = "The Yuga Skeleton 1"
 Attribute   = "Dark"
 
 Level       = 0
