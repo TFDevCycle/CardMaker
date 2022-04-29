@@ -20,10 +20,10 @@ fontsize2 = 15
 fontsize3 = 20
 fontsize4 = 17
 
-fontfile1 = "fonts/Yu-Gi-Oh! Matrix Regular Small Caps 2.ttf"
+TitleFont = "fonts/Yu-Gi-Oh! Matrix Regular Small Caps 2.ttf"
 fontfile2 = "fonts/Matrix-Bold.otf"
-fontfile3 = "fonts\Yu-Gi-Oh! ITC Stone Serif Small Caps Bold.ttf"
-fontfile4 = "fonts\Yu-Gi-Oh! Matrix Book.ttf"
+AttrFont = "fonts\Yu-Gi-Oh! ITC Stone Serif Small Caps Bold.ttf"
+DescFont = "fonts\Yu-Gi-Oh! Matrix Book.ttf"
 
 title_x = 30
 title_y = 28 
@@ -43,11 +43,11 @@ serial_x = 20
 serial_y = 583
 fontsize -= 1
 
-font = ImageFont.truetype(fontfile1, fontsize)
-font1 = ImageFont.truetype(fontfile3, fontsize1)
-font2 = ImageFont.truetype(fontfile1, fontsize2)
-font3 = ImageFont.truetype(fontfile1, fontsize3)
-font4 = ImageFont.truetype(fontfile1, fontsize4)
+TitleFont1 = ImageFont.truetype(TitleFont, fontsize)
+AttrFont1 = ImageFont.truetype(AttrFont, fontsize1)
+DescFont1 = ImageFont.truetype(DescFont, fontsize2)
+font3 = ImageFont.truetype(TitleFont, fontsize3)
+font4 = ImageFont.truetype(TitleFont, fontsize4)
 
 title_color = "black"
 desc_color  = "black"

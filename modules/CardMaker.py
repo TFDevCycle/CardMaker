@@ -102,18 +102,145 @@ class DrawImageCard():
         image_with_text.paste(card, area)
         print("Card Image: " + image_card + "\n")
 
+class DrawText():
+    print("Final font size: ",fontsize)
+
+    if card == "XYZ":
+        draw.text((title_x, title_y), Title, font=TitleFont1, fill=title_color_xyz, align=text_alignment)
+        draw.text((type_x, type_y), Type, font=AttrFont1, fill=desc_color, align=text_alignment)
+        draw.text((atk_x, atk_y), Attack, font=font3, fill=desc_color, align=text_alignment)
+        draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color_xyz, align=text_alignment)
+        draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color_xyz, align=text_alignment)
+        draw.text((serial_x, serial_y), str(serial_id), font=font4, fill=title_color_xyz, align=text_alignment)
+
+    elif card == "Trap":
+        desc_y = desc_y - 20
+        draw.text((title_x, title_y), Title, font=TitleFont1, fill=title_color, align=text_alignment)
+        draw.text((type_x, type_y), Type, font=AttrFont1, fill=desc_color, align=text_alignment)
+        draw.text((desc_x, desc_y), Description, font=DescFont1, fill=desc_color, align=text_alignment)
+        draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color, align=text_alignment)
+        draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color, align=text_alignment)
+        draw.text((serial_x, serial_y), str(serial_id), font=font4, fill=title_color, align=text_alignment)            
+    
+    elif card == "Spell":
+        desc_y = desc_y - 20
+        draw.text((title_x, title_y), Title, font=TitleFont1, fill=title_color, align=text_alignment)
+        draw.text((desc_x, desc_y), Description, font=DescFont1, fill=desc_color, align=text_alignment)
+        draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color, align=text_alignment)
+        draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color, align=text_alignment)
+        draw.text((serial_x, serial_y), str(serial_id), font=font4, fill=title_color, align=text_alignment)
+
+    elif card == "Link":
+        draw.text((atk_x, atk_y), Attack, font=font3, fill=desc_color, align=text_alignment)
+        draw.text((auflage_x, auflage_y), "", font=font4, fill=title_color, align=text_alignment)
+    else:
+        draw.text((title_x, title_y), Title, font=TitleFont1, fill=title_color, align=text_alignment)
+        draw.text((type_x, type_y), Type, font=AttrFont1, fill=desc_color, align=text_alignment)
+        draw.text((desc_x, desc_y), Description, font=DescFont1, fill=desc_color, align=text_alignment)
+        draw.text((serial_x, serial_y), str(serial_id), font=font4, fill=title_color, align=text_alignment)
+        draw.text((atk_x, atk_y), Attack, font=font3, fill=desc_color, align=text_alignment)
+        draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color, align=text_alignment)
+        draw.text((def_x, def_y), Defense, font=font3, fill=desc_color, align=text_alignment)
+        draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color, align=text_alignment)
+class DrawSpellTrapText():
+    stText_x = 275
+    stText_y = 77
+
+    if card == "Trap":
+        if cardkind == "Counter":
+            draw.text((stText_x, stText_y), "[Trap     ]", font=AttrFont1, fill=title_color, align=text_alignment)
+            cardkind_img = "Counter.png"
+            symbol_path = Image.open(souce_path + path_symbol + cardkind_img)
+            symbol_img = symbol_path.resize((17,17),Image.ANTIALIAS)
+            stArea = stText_x + 50, stText_y + 1
+            image_with_text.paste(symbol_img, stArea)
+        if cardkind == "Continuous":
+            draw.text((stText_x, stText_y), "[Trap     ]", font=AttrFont1, fill=title_color, align=text_alignment)
+            cardkind_img = "Continuous.png"
+            symbol_path = Image.open(souce_path + path_symbol + cardkind_img)
+            symbol_img = symbol_path.resize((17,17),Image.ANTIALIAS)
+            stArea = stText_x + 50, stText_y + 1
+            image_with_text.paste(symbol_img, stArea)
+        if cardkind == "":
+            stText_x = 280
+            stText_y = 77
+            draw.text((stText_x, stText_y), "[Trap Card]", font=AttrFont1, fill=title_color, align=text_alignment)
+
+    elif card == "Spell":
+        if cardkind == "Counter":
+            stText_x = 280
+            stText_y = 77
+            draw.text((stText_x, stText_y), "[Spell Card    ]", font=AttrFont1, fill=title_color, align=text_alignment) 
+        if cardkind == "Continuous":
+            draw.text((stText_x, stText_y), "[Spell Card    ]", font=AttrFont1, fill=title_color, align=text_alignment)
+            cardkind_img = "Continuous.png"
+            symbol_path = Image.open(souce_path + path_symbol + cardkind_img)
+            symbol_img = symbol_path.resize((17,17),Image.ANTIALIAS)
+            stArea = stText_x + 55, stText_y + 1
+            image_with_text.paste(symbol_img, stArea)
+        if cardkind == "":
+            stText_x = 280
+            stText_y = 77
+            draw.text((stText_x, stText_y), "[Spell Card]", font=AttrFont1, fill=title_color, align=text_alignment)
+
+class DrawCardType():
+    if Attribute == "Void":
+        attribute_image = "Void.png"
+    elif Attribute == "Time":
+        attribute_image = "Time.png"
+    elif Attribute == "Trap":
+        attribute_image = "Trap.png"
+    elif Attribute == "Spell":
+        attribute_image = "Spell.png"
+    elif Attribute == "Wind":
+        attribute_image = "Wind.png"
+    elif Attribute == "Light":
+        attribute_image = "Light.png" 
+    elif Attribute == "Fire":
+        attribute_image = "Fire.png"
+    elif Attribute == "Earth":
+        attribute_image = "Earth.png"
+    elif Attribute == "Divine":
+        attribute_image = "Divine.png"
+    elif Attribute == "Dark":
+        attribute_image = "Dark.png"
+    elif Attribute == "":
+        attribute_image = "Empty.png"    
+
+    attribute_path = Image.open(souce_path + path_type + attribute_image).convert('RGBA')
+    attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
+    area_x = 355
+    area_y = 29
+    area = area_x, area_y
+    image_with_text.paste(attribute_img, area)
+
+class DrawCornerSign():
+    corner_img = "Cornerdefault.png"
+    attribute_path = Image.open(souce_path + path_extras + corner_img)
+    attribute_img = attribute_path.resize((20,20),Image.ANTIALIAS)
+    area_x = 387
+    area_y = 580
+    area = area_x, area_y
+    image_with_text.paste(attribute_img, area)
+
 class DrawCardRarity():
     global tmpout
     tmpout = Image.alpha_composite(image, image_with_text)
     tmpout.save("tmpout.png")
-    if rarity == "Secret Rare":
+    if rarity == "Shatterfoil":
+        card_border = Image.open(souce_path + path_rarity + "Shatter.png")
+        image_with_text.paste(card_border)
+        print("Card Rarity: Shatterfoil Rare")    
+    elif rarity == "Mosaic":
+        card_border = Image.open(souce_path + path_rarity + "Mosaic.png")
+        image_with_text.paste(card_border)
+        print("Card Rarity: Mosaic Rare")  
+    elif rarity == "Secret":
         area = 51, 113 
-        draw.text((title_x, title_y), Title, font=font, fill="gold", align=text_alignment)
-        draw.text((title_x, title_y), Title, font=font, fill="silver", align=text_alignment)
-        card_image = Image.open(souce_path + path_rarity + "Secret-Rare.png")
+        card_image = Image.open(souce_path + path_rarity + "Secret.png")
         card = card_image.resize((320,320),Image.ANTIALIAS)
         image_with_text.paste(card, area)
-        print("Card Rarity: Secret Rare")
+        print("Card Rarity: Secret Rare")    
     else:
         print("Card Rarity: None")
 
@@ -230,120 +357,9 @@ class DrawLinkArrow():
         link_file = Image.open(souce_path + path_linkarrow + linkTM_image)
         image_with_text.paste(link_file, area)
 
-class DrawText():
-    print("Final font size: ",fontsize)
-
-    draw.text((title_x, title_y), Title, font=font, fill=title_color, align=text_alignment)
-    draw.text((type_x, type_y), Type, font=font1, fill=desc_color, align=text_alignment)
-    draw.text((desc_x, desc_y), Description, font=font2, fill=desc_color, align=text_alignment)
-    draw.text((serial_x, serial_y), str(serial_id), font=font4, fill=title_color, align=text_alignment)
-
-    if card == "XYZ":
-        draw.text((title_x, title_y), Title, font=font, fill=title_color_xyz, align=text_alignment)
-        draw.text((type_x, type_y), Type, font=font1, fill=desc_color, align=text_alignment)
-        draw.text((atk_x, atk_y), Attack, font=font3, fill=desc_color, align=text_alignment)
-        draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color_xyz, align=text_alignment)
-        draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color_xyz, align=text_alignment)
-        draw.text((serial_x, serial_y), str(serial_id), font=font4, fill=title_color_xyz, align=text_alignment)
-
-    elif card == "Trap":
-        draw.text((title_x, title_y), Title, font=font, fill=title_color, align=text_alignment)
-        draw.text((type_x, type_y), Type, font=font1, fill=desc_color, align=text_alignment)
-        draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color, align=text_alignment)
-        draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color, align=text_alignment)
-        draw.text((serial_x, serial_y), str(serial_id), font=font4, fill=title_color, align=text_alignment)            
-
-    elif card == "Link":
+    if card == "Link":
         Defense = str(linkLevel)
-        draw.text((atk_x, atk_y), Attack, font=font3, fill=desc_color, align=text_alignment)
         draw.text((375, def_y), Defense, font=font3, fill=desc_color, align=text_alignment)
-        draw.text((auflage_x, auflage_y), "", font=font4, fill=title_color, align=text_alignment)
-    else:
-        draw.text((atk_x, atk_y), Attack, font=font3, fill=desc_color, align=text_alignment)
-        draw.text((auflage_x, auflage_y), auflage, font=font4, fill=title_color, align=text_alignment)
-        draw.text((def_x, def_y), Defense, font=font3, fill=desc_color, align=text_alignment)
-        draw.text((card_id_x, card_id_y), card_id, font=font4, fill=title_color, align=text_alignment)
-
-class DrawSpellTrapText():
-    stText_x = 275
-    stText_y = 77
-
-    if card == "Trap":
-        if cardkind == "Counter":
-            draw.text((stText_x, stText_y), "[Trap     ]", font=font1, fill=title_color, align=text_alignment)
-            cardkind_img = "Counter.png"
-            symbol_path = Image.open(souce_path + path_symbol + cardkind_img)
-            symbol_img = symbol_path.resize((17,17),Image.ANTIALIAS)
-            stArea = stText_x + 50, stText_y + 1
-            image_with_text.paste(symbol_img, stArea)
-        if cardkind == "Continuous":
-            draw.text((stText_x, stText_y), "[Trap     ]", font=font1, fill=title_color, align=text_alignment)
-            cardkind_img = "Continuous.png"
-            symbol_path = Image.open(souce_path + path_symbol + cardkind_img)
-            symbol_img = symbol_path.resize((17,17),Image.ANTIALIAS)
-            stArea = stText_x + 50, stText_y + 1
-            image_with_text.paste(symbol_img, stArea)
-        if cardkind == "":
-            stText_x = 300
-            stText_y = 77
-            draw.text((stText_x, stText_y), "[Trap]", font=font1, fill=title_color, align=text_alignment)
-
-    elif card == "Spell":
-        if cardkind == "Counter":
-            stText_x = 300
-            stText_y = 77
-            draw.text((stText_x, stText_y), "[Spell]", font=font1, fill=title_color, align=text_alignment) 
-        if cardkind == "Continuous":
-            draw.text((stText_x, stText_y), "[Spell    ]", font=font1, fill=title_color, align=text_alignment)
-            cardkind_img = "Continuous.png"
-            symbol_path = Image.open(souce_path + path_symbol + cardkind_img)
-            symbol_img = symbol_path.resize((17,17),Image.ANTIALIAS)
-            stArea = stText_x + 55, stText_y + 1
-            image_with_text.paste(symbol_img, stArea)
-        if cardkind == "":
-            stText_x = 300
-            stText_y = 77
-            draw.text((stText_x, stText_y), "[Trap]", font=font1, fill=title_color, align=text_alignment)
-
-class DrawCardType():
-    if Attribute == "Void":
-        attribute_image = "Void.png"
-    elif Attribute == "Time":
-        attribute_image = "Time.png"
-    elif Attribute == "Trap":
-        attribute_image = "Trap.png"
-    elif Attribute == "Spell":
-        attribute_image = "Spell.png"
-    elif Attribute == "Wind":
-        attribute_image = "Wind.png"
-    elif Attribute == "Light":
-        attribute_image = "Light.png" 
-    elif Attribute == "Fire":
-        attribute_image = "Fire.png"
-    elif Attribute == "Earth":
-        attribute_image = "Earth.png"
-    elif Attribute == "Divine":
-        attribute_image = "Divine.png"
-    elif Attribute == "Dark":
-        attribute_image = "Dark.png"
-    elif Attribute == "":
-        attribute_image = "Empty.png"    
-
-    attribute_path = Image.open(souce_path + path_type + attribute_image).convert('RGBA')
-    attribute_img = attribute_path.resize((40,40),Image.ANTIALIAS)
-    area_x = 355
-    area_y = 29
-    area = area_x, area_y
-    image_with_text.paste(attribute_img, area)
-
-class DrawCornerSign():
-    corner_img = "Cornerdefault.png"
-    attribute_path = Image.open(souce_path + path_extras + corner_img)
-    attribute_img = attribute_path.resize((20,20),Image.ANTIALIAS)
-    area_x = 387
-    area_y = 580
-    area = area_x, area_y
-    image_with_text.paste(attribute_img, area)
 
 image = Image.open("tmpout.png").convert('RGBA')
 os.remove("tmpout.png")

@@ -1,17 +1,17 @@
 import modules.CardMaker
 
 #All Important Information are Set here for the CardMaker
-card        = "Spell"
-image_card  = "BlackHole.png"
-cardkind    = "Continuous"
+card        = "Trap"
+image_card  = "DarkWolfRitual.jpg"
+cardkind    = ""
 
-rarity      = "Secret Rare"
+rarity      = ""
 
 auflage     = "1. Auflage"
 card_id     = ""
 
-Title       = "The Yuga Skeleton 1"
-Attribute   = "Dark"
+Title       = "Dunkles Wolf Ritual"
+Attribute   = "Trap"
 
 Level       = 0
 lvlcolor    = "red"
@@ -22,11 +22,11 @@ linkField = [
             [0, 0, 0]
             ]
 
-Type        = "[Link/Undeath]"
-Description = "A Legendary Skeleton from the Mines of Yuga Island!"
+Type        = ""
+Description = 'Beschwöre 1 Fusionsmonster als Fusionsbeschwörung\nvon  deinem  Extra  Deck  und  verwende  dafür  Monster\nvon       deiner       Hand       oder       Spielfeldseite       als\nFusionsmaterial.'
 
-Attack      = "3000"
-Defense     = "0"
+Attack      = ""
+Defense     = ""
 
 
 
