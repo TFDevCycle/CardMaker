@@ -1,4 +1,4 @@
-import modules.CardMaker
+import modules.CardConstructor
 
 #All Important Information are Set here for the CardMaker
 card        = "Trap"
