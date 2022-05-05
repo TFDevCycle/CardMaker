@@ -6,6 +6,7 @@ from modules.DrawImage import DrawImage
 from modules.DrawArtwork import DrawArtwork
 from modules.DrawAttribute import DrawAttribute
 from modules.DrawLevel import DrawLevel
+from modules.sleep import sleeper
 
 serial_id = random.randint(000000000, 999999999)
 
@@ -84,7 +85,9 @@ class CardConstructor:
       self.draw                  = ImageDraw.Draw(self.source_card1) 
 
       self.source_card1.paste(self.artwork, self.config['areas']['img_area'])
-      self.source_card1.paste(self.attribute, self.config['areas']['attr_area'])   
+      sleeper(self.image,self.source_card1,"Rendering Artwork")
+      self.source_card1.paste(self.attribute, self.config['areas']['attr_area']) 
+      sleeper(self.image,self.source_card1,"Rendering Attribute")  
 
 
    def writeText(self):
@@ -93,22 +96,24 @@ class CardConstructor:
       AttrFont                   = ImageFont.truetype(self.config['text']['AttrFont'], self.config['text']['fontsize15'])
       DescFont                   = ImageFont.truetype(self.config['text']['DescFont'], self.config['text']['fontsize12'])
       if self.json_card['card'] == "XYZ":
-         self.draw.text((self.config['text']['title_xy']), self.json_card['Title'], font=TitleFont, fill=self.config['text']['title_color_xyz'], align=self.config['text']['text_alignment'])      
+         self.draw.text((self.config['text']['title_xy']), self.json_card['Title'], font=TitleFont, fill=self.config['text']['title_color_xyz'], align=self.config['text']['text_alignment']) 
+         sleeper(self.image,self.source_card1,"Rendering Title")     
       else:
          self.draw.text((self.config['text']['title_xy']), self.json_card['Title'], font=TitleFont, fill=self.config['text']['title_color'], align=self.config['text']['text_alignment'])
+         sleeper(self.image,self.source_card1,"Rendering Title")
       self.draw.text((self.config['text']['atk_xy']), self.json_card['Atk'], font=ATKDEFFont, fill=self.config['text']['title_color'], align=self.config['text']['text_alignment'])
       self.draw.text((self.config['text']['def_xy']), self.json_card['Def'], font=ATKDEFFont, fill=self.config['text']['title_color'], align=self.config['text']['text_alignment'])
+      sleeper(self.image,self.source_card1,"Rendering ATK/DEF")
       self.draw.text((self.config['text']['type_xy']), "[" + self.json_card['Type'] + "]", font=AttrFont, fill=self.config['text']['title_color'], align=self.config['text']['text_alignment'])
-      
+      sleeper(self.image,self.source_card1,"Rendering Type")
       self.draw.text((self.config['text']['desc_xy']), self.json_card['Descripton'], font=DescFont, fill=self.config['text']['title_color'], align=self.config['text']['text_alignment'])
+      sleeper(self.image,self.source_card1,"Rendering Description")
 
    def generateCard(self):
       self.getSources()
       self.pasteImages()
       self.writeText()
       self.setLevel()
-
-      out                     = Image.alpha_composite(self.image,self.source_card1)
-      out.show()     
+      print("finished..")
 
 
