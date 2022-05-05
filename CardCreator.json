@@ -1,0 +1,11 @@
+{
+    "card": "XYZ",
+    "image_card": "MasterDragon.png",
+    "Title": "Dragon of Magot",
+    "attribute": "Light",
+    "Level": 12,
+    "Type": "Dragon/Effect",
+    "Descripton": "The Legendary Dragon of Magot.",
+    "Atk": "1200",
+    "Def": "2333"
+}

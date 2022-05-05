@@ -1,7 +1,8 @@
-from black import json
+import json
 from modules.CardConstructor import CardConstructor
 
-json_file = '{ "card": "Link", "image_card": "DarkWolfRitual.jpg"}'
+with open('CardCreator.json', 'r') as f:
+  json_file = json.load(f)
 
-card = CardConstructor(json.loads(json_file))
-card.buildCard()
+card1 = CardConstructor(json_file)
+card1.generateCard()
