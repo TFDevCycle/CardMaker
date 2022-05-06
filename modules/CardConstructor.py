@@ -89,6 +89,8 @@ class CardConstructor:
       self.source_card1.paste(self.attribute, self.config['areas']['attr_area']) 
       sleeper(self.image,self.source_card1,"Rendering Attribute")  
 
+   def linkArrows(self):
+      pass
 
    def writeText(self):
       TitleFont                  = ImageFont.truetype(self.config['text']['titleFont'], self.config['text']['fontsize48'])
