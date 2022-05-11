@@ -1,10 +1,10 @@
 {
     "card": "Synchro",
-    "image_card": "Placeholder.png",
-    "Title": "Template Card",
-    "attribute": "Time",
-    "Level": 12,
-    "Type": "Template/Card",
+    "image_card": "DragonBeast.png",
+    "Title": "Magot the Beast",
+    "attribute": "Light",
+    "Level": 9,
+    "Type": "Dragon/Synchro",
     "Descripton": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed\ndiam  nonumy eirmod tempor invidunt  ut  labore  et  dolore\nmagna  aliquyam  erat, sed  diam  voluptua.  At  vero  eos  et\naccusam  et  justo duo dolores  et  ea  rebum. Stet clita kasd.",
     "Atk": "3200",
     "Def": "2800"
