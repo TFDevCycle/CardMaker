@@ -1,0 +1,11 @@
+{
+    "card": "Ritual",
+    "image_card": "Placeholder.png",
+    "Title": "Template Card",
+    "attribute": "Light",
+    "Level": 12,
+    "Type": "Place/Holder",
+    "Descripton": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed\ndiam  nonumy eirmod tempor invidunt  ut  labore  et  dolore\nmagna  aliquyam  erat, sed  diam  voluptua.  At  vero  eos  et\naccusam  et  justo duo dolores  et  ea  rebum. Stet clita kasd.",
+    "Atk": "?",
+    "Def": "?"
+}
